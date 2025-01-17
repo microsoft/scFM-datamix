@@ -8,7 +8,7 @@ This repository contains the code that accompanies our paper, "Consequences of t
 Foundation models for single-cell  transcriptomics have the potential to augment (or replace) purpose-built tools for a variety of common analyses, especially when data are sparse. In the field of large language models, training data composition greatly shapes performance; however, to date, single-cell foundation models have largely ignored this detail, opting instead to train on the largest possible corpus. Focusing on human hematopoiesis, we trained and analyzed deep generative models with various datasets, including cells from adult and developing tissues, disease states, and perturbation atlases. We find that (1) these models generalize poorly to unseen cell types, (2) adding malignant cells to a healthy cell training corpus does not necessarily improve modeling of unseen malignant cells, and (3) including an embryonic stem cell transcription factor differentiation atlas during training improves performance on out-of-distribution tasks. Our findings emphasize the importance of diverse training data and suggest strategies to optimize future single-cell foundation models.
 As the maintainer of this project, please make a few updates:
 
-![fig1_image](https://github.com/microsoft/scFM-datamix/blob/main/Figure1.jpeg?raw)
+![fig1_image](https://github.com/microsoft/scFM-datamix/blob/main/crop_fig1.jpg?raw)
 
 # Dependencies
 
