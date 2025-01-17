@@ -1,0 +1,9 @@
+This repository contains the scripts necessary to train and evaluate LDVAE models as described in our manuscript. It contains three folders:
+
+- Preprocess, which contains scripts to wrangle and QC downloaded data
+- Train, which contains a script to train LDVAE models
+- Evaluation, which contains scripts to compute reconstruction accuracies 
+
+These scripts were run in a conda environment, scvi-env-3. The requirements.txt file for this environment is in the repository as scvi-env-3.txt.
+
+Extensive details on these models and data can be found in our manuscript.

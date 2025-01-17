@@ -1,0 +1,5 @@
+This folder contains two scripts:
+
+-LDVAE_eval.py, which estimates reconstruction accuracies for all model/evaluation combinations
+-LDVAE_eval_class.py, which defines a python class containing a method for estimating reconstruction accuracy, as well as utilities to create a sample input/reconstruction scatterplot, get the latent representation of a dataset from a particular model, and compute expression reconstruction residuals.
+
