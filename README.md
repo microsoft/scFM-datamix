@@ -22,7 +22,7 @@ Scripts to reproduce our analyses are found in three folders:
 - `Train` contains a script to train LDVAE models.
 - `Evaluation` contains scripts to compute reconstruction accuracies.
 
-## Preprocessing
+## Datasets and Preprocessing
 This folder contains three scripts:
 
 - `preprocess_data_bloodbase.py` generates training datasets for the Blood Baseline set of experiments visualized in Figure 2 and Figure S2. It takes as input a random seed that is used for subsetting datasets. 
