@@ -62,6 +62,29 @@ This folder contains two scripts:
 - `LDVAE_eval.py` estimates reconstruction accuracies for all model/evaluation combinations.
 - `LDVAE_eval_class.py` defines a python class containing a method for estimating reconstruction accuracy. It also contains utilities to (1) create a sample input/reconstruction scatterplot, (2) obtain the latent representation of a dataset from a particular model, and (3) compute expression reconstruction residuals.
 
+## Questions and Feedback
+
+If you have any questions, or find any issues with the code, please open an issue in this repository. We also welcome any contributions to the code - be sure to checkout the Contributing section below.
+
+If you have questions or concerns with this project and do not want to create an issue, please contact
+[Ajay Nadig](mailto:anadig@broadinstitute.org) or [Lorin Crawford](mailto:lcrawford@microsoft.com). Any feedback on the software, manuscript, and tutorials is appreciated.
+
+## Relevant Citation (BibTeX)
+
+```
+@article {ID,
+	author = {Nadig, Ajay and Thoutam, Akshaya and Hughes, Madeline and Gupta, Anay and Navia, Andrew W. and Fusi, Nicolo and Raghavan, Srivatsan and Winter, Peter S. and Amini, Ava P. and Crawford, Lorin},
+	title = {Consequences of training data composition for deep generative models in single-cell biology},
+	elocation-id = {},
+	year = {},
+	doi = {},
+	publisher = {Cold Spring Harbor Laboratory},
+	URL = {},
+	eprint = {},
+	journal = {bioRxiv}
+}
+```
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
