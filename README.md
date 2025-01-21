@@ -84,6 +84,9 @@ If you have questions or concerns with this project and do not want to create an
 	journal = {bioRxiv}
 }
 ```
+## License
+
+This project is available under the MIT License.
 
 ## Contributing
 
