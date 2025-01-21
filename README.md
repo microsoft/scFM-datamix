@@ -13,14 +13,20 @@ Foundation models for single-cell  transcriptomics have the potential to augment
 
 For LDVAE analyses, you can recreate the necessary conda environment using [`scvi-env-3.txt`](https://github.com/microsoft/scFM-datamix/blob/main/scvi_env_3.txt).
 
-For Geneformer analyses, [AKSHAYA TO INSERT DEPENDENCIES]
+Using the submodules provided, install `Geneformer`
+
+```
+git clone https://github.com/microsoft/zero-shot-scfoundation
+
+pip install .
+```
 
 # Reproducing results
 
 Scripts to reproduce our analyses are found in three folders:
 - `Preprocess` contains scripts to wrangle and QC downloaded data.
-- `Train` contains a script to train LDVAE models.
-- `Evaluation` contains scripts to compute reconstruction accuracies.
+- `Train` contains scripts to train and fine-tune LDVAE and Geneformer models. Each model has its own subdirectory.
+- `Evaluation` contains scripts to compute reconstruction accuracies for LDVAE models. It also contains scripts for evaluation Geneformer models in a zero-shot and fine-tuned setting. Each model has its own subdirectory.
 
 ## Datasets and Preprocessing
 This folder contains three scripts:
