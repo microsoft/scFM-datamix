@@ -13,7 +13,7 @@ Foundation models for single-cell  transcriptomics have the potential to augment
 
 For LDVAE analyses, you can recreate the necessary conda environment using [`scvi-env-3.txt`](https://github.com/microsoft/scFM-datamix/blob/main/scvi_env_3.txt).
 
-Using the submodules provided, install `Geneformer`
+Using the submodules provided, install `Geneformer` using the following commands:
 
 ```
 git clone https://github.com/microsoft/zero-shot-scfoundation
