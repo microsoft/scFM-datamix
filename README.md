@@ -40,7 +40,7 @@ pip install .
 Scripts to reproduce our analyses are found in three folders:
 - `Preprocess` contains scripts to wrangle and QC downloaded data.
 - `Train` contains scripts to train and fine-tune LDVAE and Geneformer models. Each model has its own subdirectory.
-- `Evaluation` contains scripts to compute reconstruction accuracies for LDVAE models. It also contains scripts for evaluation Geneformer models in a zero-shot and fine-tuned setting. Each model has its own subdirectory.
+- `Evaluation` contains scripts to compute reconstruction accuracies for LDVAE models. It also contains scripts for evaluation Geneformer models in a zero-shot setting. Each model has its own subdirectory.
 
 ## Datasets and Preprocessing
 This folder contains three scripts:
@@ -48,7 +48,6 @@ This folder contains three scripts:
 - `preprocess_data_bloodbase.py` generates training datasets for the Blood Baseline set of experiments visualized in Figure 2 and Figure S2. It takes as input a random seed that is used for subsetting datasets. 
 - `preprocess_data_allbase.py` generates training datasets for the Atlas Baseline set of experiments visualized in Figure S4 and Figure S6. It takes as input a random seed that is used for subsetting datasets. 
 - `preprocess_eval_data.py` generates evaluation datasets.
-- `./data_wrangling_scripts/download_finetune_data.sh` generates the needed datasets used for finetuning geneformer models.
 
 These scripts require the users download several publicly available datasets. These datasets are described below.
 
@@ -78,7 +77,7 @@ This folder contains scripts to train LDVAE and Geneformer models. In the LDVAE 
 
 - the `Train_Models.py` script trains Blood- and Atlas-baseline LDVAE models using the scvi-tools package. It takes a random seed as input. It outputs trained models as well as training curves. For details on the training parameters and model architecture, please see the Methods section of the manuscript. 
 
-- In the geneformer subfolder, the `pretrain_geneformer.py` script is used to pretrain new geneformer models. `fine_tune_geneformer_cell_classification.py` takes a pretrained model and fines tunes the model on the cell classification task. Before pretraining or finetuning a geneformer moddel, the test/train/val splits of the data must be tokenized using `tokenize_data.py`.
+- In the geneformer subfolder, the `pretrain_geneformer.py` script is used to pretrain new geneformer models. Before pretraining a geneformer model, the test/train/val splits of the data must be tokenized using `tokenize_data.py`.
 
 ## Evaluations
 
