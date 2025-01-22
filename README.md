@@ -13,10 +13,23 @@ Foundation models for single-cell  transcriptomics have the potential to augment
 
 For LDVAE analyses, you can recreate the necessary conda environment using [`scvi-env-3.txt`](https://github.com/microsoft/scFM-datamix/blob/main/scvi_env_3.txt).
 
-Using the submodules provided, install `Geneformer`
+Using the submodules provided, install `Geneformer`:
+
+```
+git lfs install
+
+git clone https://github.com/lcrawlab/Geneformer.git
+
+cd Geneformer 
+
+pip install .
+```
+
 
 ```
 git clone https://github.com/microsoft/zero-shot-scfoundation
+
+cd sc_foundation_evals
 
 pip install .
 ```
@@ -59,14 +72,18 @@ The Human Brain Cell Atlas neuron dataset can be downloaded [here](https://githu
 
 ## Training
 
-This folder contains a script, `Train_Models.py`, that trains Blood- and Atlas-baseline LDVAE models using the scvi-tools package. It takes a random seed as input. It outputs trained models as well as training curves. For details on the training parameters and model architecture, please see the Methods section of the manuscript.
+This folder contains scripts to train LDVAE and Geneformer models. In the LDVAE subfolder, the `Train_Models.py` script trains Blood- and Atlas-baseline LDVAE models using the scvi-tools package. It takes a random seed as input. It outputs trained models as well as training curves. For details on the training parameters and model architecture, please see the Methods section of the manuscript. In the geneformer subfolder, the `pretrain_geneformer.py` script is used to pretrain new geneformer models. `fine_tune_geneformer_cell_classification.py` takes a pretrained model and fines tunes the model on the cell classification task. Before pretraining or finetuning a geneformer moddel, the test/train/val splits of the data must be tokenized using `tokenize_data.py`.
 
 ## Evaluations
 
-This folder contains two scripts:
+This folder contains two subfolder for evaluation LDVAE and Geneformer models. The LDVAE subfolder contains two scripts:
 
 - `LDVAE_eval.py` estimates reconstruction accuracies for all model/evaluation combinations.
 - `LDVAE_eval_class.py` defines a python class containing a method for estimating reconstruction accuracy. It also contains utilities to (1) create a sample input/reconstruction scatterplot, (2) obtain the latent representation of a dataset from a particular model, and (3) compute expression reconstruction residuals.
+
+The geneformer subfolder contains one script:
+
+- `zeroshot_eval_geneformer.py` evaluates the models zero-shot performance taking in put of `gene_name_id_dict.pkl` and `token_dictionary.pkl` taken from the geneformer repository.
 
 ## Questions and Feedback
 
