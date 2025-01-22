@@ -17,10 +17,7 @@ from sc_foundation_evals.helpers.custom_logging import log
 log.setLevel(logging.INFO)
 
 
-
-
-
-def zeroshot_ajay(dict_dir, model_dir, batch_size, output_dir, in_dataset_path, preprocessed_path, var_file):
+def zeroshot_eval(dict_dir, model_dir, batch_size, output_dir, in_dataset_path, preprocessed_path, var_file):
  
     model_out = os.path.join(output_dir, "model_outputs")
     dataset_name = os.path.basename(in_dataset_path).split(".")[0]
@@ -104,7 +101,6 @@ def zeroshot_ajay(dict_dir, model_dir, batch_size, output_dir, in_dataset_path, 
                        dataset_path = preprocessed_path,
                        cell_type_col = label_col)
 
-    # input_data = geneform.load_tokenized_dataset(preprocessed_path)
 
 
     geneform.extract_embeddings(data = input_data,
@@ -121,25 +117,6 @@ def zeroshot_ajay(dict_dir, model_dir, batch_size, output_dir, in_dataset_path, 
     metrics_df.to_csv(output_dir + "/" + metrics_csv)
 
     eval_pred.visualize(n_cells = 100, cmap = "mako_r")
-    # umap_pdf = f"zero_shot_correlations_heat_{dataset_name}.pdf"
-    # umap_df.savefig(output_dir + "/" + umap_pdf, format='pdf')
-
-    # eval_ce = cell_embeddings.CellEmbeddingsEval(geneform,
-    #                                          data = input_data,
-    #                                          output_dir = model_out,
-    #                                          label_key = label_col,
-    #                                          batch_key = batch_col)
-
-    # # with n_cells you can specify how much to subset the obs for
-    # metrics_df = eval_ce.evaluate(n_cells = 1000, embedding_key = "geneformer")
-
-    # metrics_csv = f"zero_shot_classification_metrics_{dataset_name}.csv"
-    # metrics_df.to_csv(output_dir + "/" + metrics_csv)
-
-    # umap_df = eval_ce.visualize(embedding_key = "geneformer")
-    # umap_pdf = f"zero_shot_classification_umap_{dataset_name}.pdf"
-    # umap_pdf.savefig(output_dir + "/" + umap_pdf, format='pdf')
-
 
 
     return metrics_df
@@ -159,47 +136,11 @@ def main():
 
     var_file = sys.argv[7]
 
-    # dataset_name = os.path.basename(in_dataset_path).split(".")[0]
-    
-    # create the preprocessed path if it does not exist
+
     os.makedirs(preprocessed_path, exist_ok=True)
 
-    # print("loading anndata")
-    # adata = ad.read_h5ad(in_dataset_path)
 
-    # if dataset_name in ["cca_skin_Ji2020_QC"]:
-    #     var_df = pd.read_csv(var_file, index_col=0)
-    #     var_df.index = var_df.index.map(str)
-    #     adata.var = var_df
-    #     adata.var_names = adata.var.feature_name
-    #     print(adata.var_names)
-    # #     gene_col = ["feature_id"]
-    # #     batch_col = ["dataset_id"]
-    # #     label_col = ["cell_type"]
-    # #     layer_key = "X"
-
-    # if h5ad_file == "covid_for_publish.h5ad":
-    #     print("removing slashes from column name (incompatible with loom format)")
-    #     adata.obs.rename(columns={"last_author/PI": "last_author_PI"}, inplace=True) # can't have slashes in loom files
-    #     # only subsample covid data
-    #     sc.pp.subsample(adata, n_obs = 20000) # subsample to 20k cells
-
-    # if 'kim_lung' in h5ad_file:
-    #     batch_cols = ["sample"]
-    #     label_col = "cell_type"
-    #     # drop nans, some cell types don't have labels for kim lung dataset
-    #     adata = adata[adata.obs['cell_type'].notna()]
-
-# # in which column in adata.obs are gene names stored? if they are in index, the index will be copied to a column with this name
-# gene_col = "gene_symbols"
-# # batch column found in adata.obs
-# batch_col = "batch"
-# # where are labels stored in adata.obs? 
-# label_col = "celltype" #"str_labels"
-# # where the raw counts are stored?
-# layer_key = "counts" #"X" 
-
-    zeroshot_ajay(dict_dir, model_dir, batch_size, output_dir, in_dataset_path, preprocessed_path, var_file)
+    zeroshot_eval(dict_dir, model_dir, batch_size, output_dir, in_dataset_path, preprocessed_path, var_file)
 
 
 if __name__ == "__main__":
