@@ -59,14 +59,14 @@ The Human Brain Cell Atlas neuron dataset can be downloaded [here](https://githu
 
 ## Training
 
-This folder contains a script, `Train_Models.py`, that trains Blood- and Atlas-baseline LDVAE models using the scvi-tools package. It takes a random seed as input. It outputs trained models as well as training curves. For details on the training parameters and model architecture, please see the Methods section of the manuscript.
+This folder contains a script, `ldvae/Train_Models.py`, that trains Blood- and Atlas-baseline LDVAE models using the scvi-tools package. It takes a random seed as input. It outputs trained models as well as training curves. For details on the training parameters and model architecture, please see the Methods section of the manuscript.
 
 ## Evaluations
 
 This folder contains two scripts:
 
-- `LDVAE_eval.py` estimates reconstruction accuracies for all model/evaluation combinations.
-- `LDVAE_eval_class.py` defines a python class containing a method for estimating reconstruction accuracy. It also contains utilities to (1) create a sample input/reconstruction scatterplot, (2) obtain the latent representation of a dataset from a particular model, and (3) compute expression reconstruction residuals.
+- `ldvae/LDVAE_eval.py` estimates reconstruction accuracies for all model/evaluation combinations.
+- `ldvae/LDVAE_eval_class.py` defines a python class containing a method for estimating reconstruction accuracy. It also contains utilities to (1) create a sample input/reconstruction scatterplot, (2) obtain the latent representation of a dataset from a particular model, and (3) compute expression reconstruction residuals.
 
 ## Questions and Feedback
 
