@@ -88,7 +88,7 @@ This folder contains two subfolder for evaluation LDVAE and Geneformer models. T
 
 The geneformer subfolder contains one script:
 
-- `zeroshot_eval_geneformer.py` extracts embeddings and evaluates the models zero-shot performance. This script takes in `gene_name_id_dict.pkl` and `token_dictionary.pkl` pulled from the geneformer repository.
+- `zeroshot_eval_geneformer.py` extracts embeddings and evaluates the models zero-shot performance. This script takes in `./Training/geneformer/adata_var.csv`
 
 ## Questions and Feedback
 

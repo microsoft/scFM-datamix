@@ -9,4 +9,4 @@ This directory contains directories for evaluating `ldvae` and `Geneformer` mode
 
 ## Geneformer
 
-- `zeroshot_eval_geneformer.py` extracts embeddings and evaluates the models zero-shot performance. This script takes in `gene_name_id_dict.pkl` and `token_dictionary.pkl` pulled from the geneformer repository.
+- `zeroshot_eval_geneformer.py` extracts embeddings and evaluates the models zero-shot performance. This script takes in `../../Training/geneformer/adata_var.csv`
