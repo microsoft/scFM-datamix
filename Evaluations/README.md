@@ -1,6 +1,6 @@
 # Evaluations
 
-This directory contains directories for evaluating `ldvae` and `Geneformer` models. We give instructions running the eval scripts for each of these below:
+This directory contains directories for evaluating `ldvae` and `geneformer` models. We give instructions running the eval scripts for each of these below:
 
 ## LDVAE
 
