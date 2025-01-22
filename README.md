@@ -1,6 +1,3 @@
-
-
-
 # Consequences of training data composition for deep generative models in single-cell biology
 This repository contains the code that accompanies our paper, "Consequences of training data composition for deep generative models in single-cell biology". You can find the preprint of the paper [here](INSERT PAPER LINK).
 
@@ -81,7 +78,7 @@ In the `ldvae` subfolder:
 
 In the `geneformer` subfolder:
 
-- The `pretrain_geneformer.py` script is used to pretrain new geneformer models. Before pretraining a geneformer model, the test/train/val splits of the data must be tokenized using `tokenize_data.py`.
+- The `pretrain_geneformer.py` script is used to pre-train new geneformer models. Before pre-training a geneformer model, the test/train/val splits of the data must be tokenized using `tokenize_data.py`.
 
 ## Evaluations
 
