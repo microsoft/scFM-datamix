@@ -75,11 +75,11 @@ The Human Brain Cell Atlas neuron dataset can be downloaded [here](https://githu
 
 This folder contains scripts to train LDVAE and Geneformer models. 
 
-In the LDVAE subfolder, 
+In the `ldvae` subfolder, 
 
 - the `Train_Models.py` script trains Blood- and Atlas-baseline LDVAE models using the scvi-tools package. It takes a random seed as input. It outputs trained models as well as training curves. For details on the training parameters and model architecture, please see the Methods section of the manuscript.
 
-In the geneformer subfolder, 
+In the `geneformer` subfolder, 
 
 -the `pretrain_geneformer.py` script is used to pretrain new geneformer models. Before pretraining a geneformer model, the test/train/val splits of the data must be tokenized using `tokenize_data.py`.
 
@@ -87,12 +87,12 @@ In the geneformer subfolder,
 
 This folder contains two subfolder for evaluation LDVAE and Geneformer models. 
 
-The LDVAE subfolder contains two scripts:
+The `ldvae` subfolder contains two scripts:
 
 - `LDVAE_eval.py` estimates reconstruction accuracies for all model/evaluation combinations.
 - `LDVAE_eval_class.py` defines a python class containing a method for estimating reconstruction accuracy. It also contains utilities to (1) create a sample input/reconstruction scatterplot, (2) obtain the latent representation of a dataset from a particular model, and (3) compute expression reconstruction residuals.
 
-The geneformer subfolder contains one script:
+The `geneformer` subfolder contains one script:
 
 - `zeroshot_eval_geneformer.py` extracts embeddings and evaluates the models zero-shot performance. This script takes in `./Training/geneformer/adata_var.csv`
 
